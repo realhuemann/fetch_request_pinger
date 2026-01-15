@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch request checker 1.0</title>
+</head>
+
+<body>
+    <h1>Fetch request checker 1.0</h1>
+    <input type="text" id="url" placeholder="Type your url here">
+    <input type="button" id="button" value="Click here">
+    <p>©copyright realhuemann 2026, all rights reserved</p>
+</body>
+</html>
+
+
+<script>
+    let url = document.getElementById("url")
+    let url_value = url.value
+    let button = document.getElementById("button")
+
+    button.addEventListener("click", function(){
+        let url_value = url.value
+        alert("attmpting to fetch data")
+        
+        fetch(url_value, {
+            method: "GET",
+            mode: "no-cors",
+        })
+        .then(response => {
+            alert("was able to contact server")
+    })
+    .catch(error => {
+        alert("error")
+        alert(error)
+        });})
+ 
+</script>
